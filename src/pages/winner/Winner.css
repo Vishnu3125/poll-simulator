@@ -1,0 +1,21 @@
+.winner-main-div{
+    text-align: center;
+    align-items: center;
+}
+
+.winner-main-heading{
+    font-size: 2rem;
+    margin: 4% 0 2%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.winner-sub-heading{
+    width: 60%;
+    margin: auto;
+    background-color: #6760c3;
+    padding: 3%;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 25px;
+    color: #F3F5FC;
+}

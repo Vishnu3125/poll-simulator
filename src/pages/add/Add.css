@@ -1,0 +1,46 @@
+.add-main-div{
+    text-align: center;
+    align-items: center;
+}
+
+.add-main-heading{
+    font-size: 2rem;
+    margin: 4% 0 2%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-form-input-text{
+    height: 2rem;
+    width: 25rem;
+    margin: 0 2%;
+    padding: 0 20px;
+    border-radius: 25px;
+    border-color: #453ea4;
+}
+
+.add-form-input-text:focus{
+    outline: none;
+}
+
+.add-form-input-button{
+    height: 2.4rem;
+    width: 5rem;
+    color: #F3F5FC;
+    background-color: #453ea4;
+    border-radius: 25px;
+    border-color: #453ea4;
+}
+
+.add-form-input-button:hover{
+    background-color: #6f68c6;
+}
+
+.add-sub-heading{
+    margin-top: 3%;
+    font-size: 1.3rem;
+}
+
+.add-list-data{
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}

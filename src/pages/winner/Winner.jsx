@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React,{useEffect, useState} from 'react';
+import Navigation from "../navigation/Navigation";
+import "./Winner.css"
 
 const Winner = () => {
     const [winner, setwinner] = useState(0);
@@ -17,9 +19,12 @@ const Winner = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Winner</h1>
-            {winner ? "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes" : "No winner data available" + winnerError}
+        <div className="winner-main-div">
+            <Navigation/>
+            <p className="winner-main-heading">Winner</p>
+            <div className="winner-sub-heading">
+            {winner ? "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes" : "No winner : " + winnerError}
+            </div>
         </div>
     );
 }

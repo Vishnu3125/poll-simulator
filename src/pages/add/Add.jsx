@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios'; 
+import "./Add.css";
+import Navigation from "../navigation/Navigation";
 
 const Add = () => {
     const candidateData = useRef("null");
@@ -26,16 +28,20 @@ const Add = () => {
     }, [dataUpdated]);
 
     return (
-        <div>
-            <h1>This is Add file</h1>
-            <form method="post" ref={candidateData}>
-                <input type="text" name="candidateName" id="candidateName"/>
-                <input type="button" onClick={addMember} name= "Submit" value = "Submit"/>
-            </form>
+        <div className="add-main-div">
+            <Navigation/>
+            <p className="add-main-heading">Add Candidate</p>
             <div>
+            <form method="post" ref={candidateData}>
+                <input type="text" name="candidateName" id="candidateName" className="add-form-input-text"/>
+                <input type="button" onClick={addMember} name= "Submit" value = "Submit" className="add-form-input-button"/>
+            </form>
+            </div>
+            <div style={{width: "40%", margin: "3% auto"}}>
+                <p className="add-sub-heading">List of current candidates</p>
                 {candidates && candidates.map((candidate) => (
                     <div>
-                        <h2>{candidate.name}</h2>
+                        <p className="add-list-data">{candidate.name}</p>
                     </div>
                 ))}
 

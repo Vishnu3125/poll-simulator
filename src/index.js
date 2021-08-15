@@ -11,6 +11,7 @@ import Add from './pages/add/Add'
 import Vote from './pages/vote/Vote'
 import Winner from './pages/winner/Winner'
 import Result from './pages/result/Result'
+import Navigation from './pages/navigation/Navigation'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ ReactDOM.render(
           <Route path="/">
             <App />
           </Route>
+        <Navigation/>
         </Switch>
     </Router>
   </React.StrictMode>,

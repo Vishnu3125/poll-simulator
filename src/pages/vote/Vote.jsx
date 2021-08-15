@@ -1,5 +1,7 @@
 import React, {useRef, useState, useEffect } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
+import "./Vote.css";
+import Navigation from "../navigation/Navigation";
 
 const Vote = () => {
 
@@ -7,6 +9,11 @@ const Vote = () => {
     const [status, setstatus] = useState(null);
     const [value, setvalue] = useState(0);
     const [candidates, setcandidates] = useState(false);
+
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
 
     function addVote() {
         const data = voterId.current
@@ -32,6 +39,10 @@ const Vote = () => {
                 else if(validify.response === 200)
                     setstatus(<p>{validify.message}</p>)
             });
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            modal.style.display = "block";
     }
 
     useEffect(() => {
@@ -44,18 +55,32 @@ const Vote = () => {
 
 
     return (
-        <div>
+    
+        <div className="vote-main-div">
+
+            <Navigation/>
+
+            <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>{status}</p>
+            </div>
+            </div>
+
             <form method="post" ref={voterId}>
-            <h1>This is vote file</h1>
-            Voter ID : <input type="text" name="voterId" id="voterId"/> 
+            <p className="vote-main-heading">Voting Page</p>
+            <span className="vote-input-heading">Voter ID :</span><input type="text" name="voterId" id="voterId" className="vote-form-input-text"/>
+            <input type="button" value="Vote" onClick={addVote} className="vote-form-input-button"/> <br />
+            </form>
+            <div className="vote-radio-main-div">
+                <div className="vote-sub-heading">Vote for</div>
                 {value ? candidates.map((da) => (
-                    <div>
+                    <div className="vote-radio-button-div">
                         <p style={{display: "inline-block"}}>{da.name}</p>
                         <input type="radio" name="radio" id={da.name} value={da.name} />
                     </div>
-                )) : <div><h2>Hiii</h2></div>}
-                <input type="button" value="Vote" onClick={addVote}/>
-            </form>
+                )) : <div><p>Loading...</p></div>}
+            </div>
             {status}
         </div>
     );

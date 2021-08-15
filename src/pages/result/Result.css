@@ -1,0 +1,35 @@
+.result-main-div{
+    text-align: center;
+    align-items: center;
+}
+
+.result-main-heading{
+    font-size: 2rem;
+    margin: 4% 0 2%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.result-main-table{
+    width: 50%;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+.result-table-head-rows{
+    background-color: #6760c3;
+    color: #F3F5FC;
+    padding: 3%;
+}
+
+.result-table-rows{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e1e0f3;
+}
+
+.result-table-rows:nth-child(odd){
+    background-color: #d3d1ee;
+}
+
+.result-table-box{
+    padding: 2%;
+}

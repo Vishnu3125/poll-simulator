@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Navigation from "../navigation/Navigation";
+import "./Result.css"
 
 const Result = () => {
     const [candidates, setcandidates] = useState(0);
@@ -13,17 +15,18 @@ const Result = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Vote Summary</h1>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Votes</th>
+        <div className="result-main-div">
+            <Navigation/>
+            <p className="result-main-heading">Vote Summary</p>
+            <table className="result-main-table">
+                <tr className="result-table-head-rows">
+                    <th className="result-table-box">Name</th>
+                    <th className="result-table-box">Votes</th>
                 </tr>
             {candidates && candidates.map((candidate)=>(
-                <tr>
-                    <td>{candidate.name}</td>
-                    <td>{candidate.votes}</td>
+                <tr className="result-table-rows">
+                    <td className="result-table-box">{candidate.name}</td>
+                    <td className="result-table-box">{candidate.votes}</td>
                 </tr>
             ))}
             </table>

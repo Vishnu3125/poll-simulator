@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Patua+One&family=Roboto&display=swap');
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; 
+font-family: 'Patua One', cursive; */
+
+.navigation-navlinks-p{
+    display: inline-block;
+    margin: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navigation-navlinks-text{
+    color: #F3F5FC;
+}
+
+.navigation-header-h{
+    font-size: 3rem;
+    display: inline-block;
+    margin: 1%;
+    color: #F3F5FC;
+    font-family: 'Patua One', cursive;
+}
+
+.navigation-navlinks-div{
+    margin-left: 25%;
+    display: inline-block;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation-main-div{
+    background-color: #4D45B6;
+    box-shadow: -1px 5px 10px -3px rgba(0,0,0,0.26);
+-webkit-box-shadow: -1px 5px 10px -3px rgba(0,0,0,0.26);
+-moz-box-shadow: -1px 5px 10px -3px rgba(0,0,0,0.26);
+}
