@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Add = () => {
     const candidateData = useRef("null");
-    const [candidates, setcandidates] = useState(0);
+    const [candidates, setcandidates] = useState(null);
     const [dataUpdated, setdataUpdated] = useState(0);
 
     function addMember() {

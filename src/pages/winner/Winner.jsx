@@ -3,12 +3,16 @@ import React,{useEffect, useState} from 'react';
 
 const Winner = () => {
     const [winner, setwinner] = useState(0);
+    const [winnerError, setwinnerError] = useState(0);
 
     useEffect(() => {
         axios.get("http://127.0.0.1:5000/winner")
         .then((response) => {
             console.log(response.data)
-            setwinner(response.data)
+            if(response.data.response === 201 || response.data.response === 202)    
+                setwinnerError(response.data.message)
+            else
+                setwinner(response.data)
         })
         
     }, []);
@@ -16,7 +20,7 @@ const Winner = () => {
     return (
         <div>
             <h1>Winner</h1>
-            {winner && "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes"}
+            {winner ? "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes" : "No winner data available"}
         </div>
     );
 }
