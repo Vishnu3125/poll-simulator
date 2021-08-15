@@ -5,6 +5,7 @@ const Vote = () => {
 
     const voterId = useRef("null");
     
+    const [status, setstatus] = useState(null);
     const [value, setvalue] = useState(0);
     const [candidates, setcandidates] = useState(false);
 
@@ -12,7 +13,7 @@ const Vote = () => {
         const data = voterId.current
         var voter = (data['voterId'].value)
         var candidate = document.getElementsByName("radio");
-        var selectedCandidate
+        var selectedCandidate = 0
         for(let i = 0; i < candidate.length; i++) {
             if(candidate[i].checked){
                 selectedCandidate = (candidate[i].value)
@@ -22,13 +23,20 @@ const Vote = () => {
         axios.post('http://127.0.0.1:5000/vote', {"selectedCandidate" : selectedCandidate, "voterId" : voter})
             .then(response => {
                 const validify = response.data;
-                console.log(validify)
+                console.log(typeof(validify))
+
+                if(validify.response === 202)
+                    setstatus(<p>{validify.message}</p>)
+                else if(validify.response === 203)
+                    setstatus(<p>{validify.message}</p>)
+                else if(validify.response === 204)
+                    setstatus(<p>{validify.message}</p>)
+                else if(validify.response === 200)
+                    setstatus(<p>{validify.message}</p>)
             });
     }
 
     useEffect(() => {
-        
-        const data = "user"
         axios.get('http://127.0.0.1:5000/voteSummary')
             .then(response => {
                 // console.log((response.data))
@@ -56,7 +64,7 @@ const Vote = () => {
                 )) : <div><h2>Hiii</h2></div>}
                 <input type="button" value="Vote" onClick={addVote}/>
             </form>
-
+            {status}
         </div>
     );
 }

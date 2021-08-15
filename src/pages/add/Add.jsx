@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const Add = () => {
     const candidateData = useRef("null");
+    const [candidates, setcandidates] = useState(0);
+    const [dataUpdated, setdataUpdated] = useState(0);
 
     function addMember() {
         const form = candidateData.current
@@ -14,21 +16,22 @@ const Add = () => {
             .then(response => {
                 const validify = response.data;
                 console.log(validify)
+                setdataUpdated(dataUpdated+1)
             });
     }
 
-    // useEffect(() => {
-    //     // POST request using axios inside useEffect React hook
-    //     // const article = { title: 'React Hooks POST Request Example' };
-    //     const data = "user"
-    //     axios.post('http://127.0.0.1:5000/add', data)
-    //         .then(response => {
-    //             const validify = response.data;
-    //             console.log(validify)
-    //         });
+    useEffect(() => {
+        // POST request using axios inside useEffect React hook
+        // const article = { title: 'React Hooks POST Request Example' };
+        axios.get('http://127.0.0.1:5000/voteSummary')
+            .then(response => {
+                const validify = response.data;
+                console.log(validify)
+                setcandidates(validify)
+            });
     
-    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    // }, []);
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, [dataUpdated]);
 
     return (
         <div>
@@ -37,6 +40,14 @@ const Add = () => {
                 <input type="text" name="candidateName" id="candidateName"/>
                 <input type="button" onClick={addMember} name= "Submit" value = "Submit"/>
             </form>
+            <div>
+                {candidates && candidates.map((candidate) => (
+                    <div>
+                        <h2>{candidate.name}</h2>
+                    </div>
+                ))}
+
+            </div>
         </div>
     );
 }
