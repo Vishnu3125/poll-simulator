@@ -4,7 +4,6 @@ import axios from 'axios';
 const Vote = () => {
 
     const voterId = useRef("null");
-    
     const [status, setstatus] = useState(null);
     const [value, setvalue] = useState(0);
     const [candidates, setcandidates] = useState(false);
@@ -23,7 +22,6 @@ const Vote = () => {
         axios.post('http://127.0.0.1:5000/vote', {"selectedCandidate" : selectedCandidate, "voterId" : voter})
             .then(response => {
                 const validify = response.data;
-                console.log(typeof(validify))
 
                 if(validify.response === 202)
                     setstatus(<p>{validify.message}</p>)
@@ -39,15 +37,9 @@ const Vote = () => {
     useEffect(() => {
         axios.get('http://127.0.0.1:5000/voteSummary')
             .then(response => {
-                // console.log((response.data))
-                // Object.keys(response.data).map((da) => {console.log(da); console.log(response.data[da])})
-                //console.log(JSON.parse(response.data))
-                console.log(response.data)
                 setcandidates(response.data)
                 setvalue(1)
             });
-    
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);
 
 

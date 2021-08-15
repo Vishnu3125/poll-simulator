@@ -8,7 +8,6 @@ const Winner = () => {
     useEffect(() => {
         axios.get("http://127.0.0.1:5000/winner")
         .then((response) => {
-            console.log(response.data)
             if(response.data.response === 201 || response.data.response === 202)    
                 setwinnerError(response.data.message)
             else
@@ -20,7 +19,7 @@ const Winner = () => {
     return (
         <div>
             <h1>Winner</h1>
-            {winner ? "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes" : "No winner data available"}
+            {winner ? "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes" : "No winner data available" + winnerError}
         </div>
     );
 }

@@ -8,29 +8,21 @@ const Add = () => {
 
     function addMember() {
         const form = candidateData.current
-        console.log(candidateData.current)
         const data = {
             "name" : form['candidateName'].value
         }
         axios.post('http://127.0.0.1:5000/add', data)
             .then(response => {
-                const validify = response.data;
-                console.log(validify)
                 setdataUpdated(dataUpdated+1)
             });
     }
 
     useEffect(() => {
-        // POST request using axios inside useEffect React hook
-        // const article = { title: 'React Hooks POST Request Example' };
         axios.get('http://127.0.0.1:5000/voteSummary')
             .then(response => {
                 const validify = response.data;
-                console.log(validify)
                 setcandidates(validify)
-            });
-    
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    });
     }, [dataUpdated]);
 
     return (
