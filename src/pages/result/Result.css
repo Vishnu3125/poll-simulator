@@ -33,3 +33,9 @@
 .result-table-box{
     padding: 2%;
 }
+
+.result-chart-main-div{
+    margin: 3% auto;
+    height: 500px; 
+    width: 800px 
+}

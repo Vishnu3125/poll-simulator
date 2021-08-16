@@ -13,6 +13,7 @@ const Winner = () => {
             if(response.data.response === 201 || response.data.response === 202)    
                 setwinnerError(response.data.message)
             else
+                console.log(response.data)
                 setwinner(response.data)
         })
         
@@ -23,7 +24,7 @@ const Winner = () => {
             <Navigation/>
             <p className="winner-main-heading">Winner</p>
             <div className="winner-sub-heading">
-            {winner ? "Winner is "+winner[0][0]+" with total of "+winner[0][1]+" votes" : "No winner : " + winnerError}
+            {winner ? "Winner is "+winner[0]["name"]+" with total of "+winner[0]["votes"]+" votes" : "No winner : " + winnerError}
             </div>
         </div>
     );
