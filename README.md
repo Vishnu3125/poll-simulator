@@ -35,8 +35,8 @@
 
 
 ## ScreenShort
-![Alt text](/imagse/image1.png?raw=true "Main")
-![Alt text](/imagse/image2.png?raw=true "Main")
-![Alt text](/imagse/image3.png?raw=true "Main")
-![Alt text](/imagse/image4.png?raw=true "Main")
-![Alt text](/imagse/image5.png?raw=true "Main") 
+![Alt text](/images/image1.png?raw=true "Main")
+![Alt text](/images/image2.png?raw=true "Main")
+![Alt text](/images/image3.png?raw=true "Main")
+![Alt text](/images/image4.png?raw=true "Main")
+![Alt text](/images/image5.png?raw=true "Main") 
