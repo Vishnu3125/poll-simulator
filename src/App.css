@@ -1,4 +1,10 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Patua+One&family=Roboto&display=swap');
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; 
+font-family: 'Patua One', cursive; */
+
+.App{
+  display: inline-block;
   text-align: center;
 }
 
@@ -35,4 +41,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.links{
+  color: #F3F5FC;
+  margin-top: auto;
+}
+
+.app-link{
+  height: 180px;
+  width: 380px;
+  margin: 2%;
+  border-radius: 25px;
+  
+}
+
+.app-link-add{
+  display: inline-block;
+  background-color: #45aeb6;
+  
+}
+
+.app-link-vote{
+  display: inline-block;
+  background-color: #4d45b6;
+}
+
+.app-link-winner{
+  display: inline-block;
+  background-color: #b64d45;
+}
+
+.app-link-result{
+  display: inline-block;
+  background-color: #aeb645;
 }

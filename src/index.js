@@ -30,7 +30,7 @@ ReactDOM.render(
             <Result />
           </Route>
           <Route path="/">
-            <App />
+            <Add />
           </Route>
         <Navigation/>
         </Switch>

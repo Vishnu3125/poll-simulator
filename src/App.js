@@ -1,25 +1,24 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
       <h1> Poll Simulator </h1>
       <nav>
-          <ul>
-            <li>
-              <Link to="/add">Add Candidate</Link>
-            </li>
-            <li>
-              <Link to="/vote">Vote</Link>
-            </li>
-            <li>
-              <Link to="/winner">Poll Result</Link>
-            </li>
-            <li>
-              <Link to="/result">Voting Summary</Link>
-            </li>
-          </ul>
+            <div className = "app-link-add app-link">
+              <Link to="/add" className="links">Add Candidate</Link>
+            </div>
+            <div className = "app-link-vote app-link">
+              <Link to="/vote" className="links">Vote</Link>
+            </div>
+            <div className = "app-link-winner app-link">
+              <Link to="/winner" className="links">Poll Result</Link>
+            </div>
+            <div className = "app-link-result app-link">
+              <Link to="/result" className="links">Voting Summary</Link>
+            </div>
         </nav>
     </div>
   );
