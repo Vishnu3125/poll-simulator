@@ -28,14 +28,7 @@ const Vote = () => {
         axios.post('http://127.0.0.1:5000/vote', {"selectedCandidate" : selectedCandidate, "voterId" : voter})
             .then(response => {
                 const validify = response.data;
-
-                if(validify.response === 202)
-                    setstatus(<p>{validify.message}</p>)
-                else if(validify.response === 203)
-                    setstatus(<p>{validify.message}</p>)
-                else if(validify.response === 204)
-                    setstatus(<p>{validify.message}</p>)
-                else if(validify.response === 200)
+                if(validify.response)
                     setstatus(<p>{validify.message}</p>)
             });
             span.onclick = function() {
@@ -80,7 +73,7 @@ const Vote = () => {
                     </div>
                 )) : <div><p>Loading...</p></div>}
             </div>
-            {status}
+            <h4>{status}</h4>
         </div>
     );
 }

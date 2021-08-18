@@ -11,14 +11,26 @@
 
 .add-form-input-text{
     height: 2rem;
-    width: 25rem;
-    margin: 0 2%;
+    width: 20rem;
+    padding: 0 20px;
+    border-radius: 25px;
+    border-color: #453ea4;
+}
+
+.add-form-input-pin{
+    height: 2rem;
+    width: 2rem;
+    margin: 0 5px;
     padding: 0 20px;
     border-radius: 25px;
     border-color: #453ea4;
 }
 
 .add-form-input-text:focus{
+    outline: none;
+}
+
+.add-form-input-pin:focus{
     outline: none;
 }
 

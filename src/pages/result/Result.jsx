@@ -2,22 +2,22 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Navigation from "../navigation/Navigation";
 import "./Result.css"
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar, Doughnut } from 'react-chartjs-2';
 
 const data = {
     labels: [],
     datasets: [
       {
         barPercentage: 1,
-        label: 'Number of Votes',
+        label: "Number of votes",
         data: [],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.9)',
-          'rgba(54, 162, 235, 0.9)',
-          'rgba(255, 206, 86, 0.9)',
-          'rgba(75, 192, 192, 0.9)',
-          'rgba(153, 102, 255, 0.9)',
-          'rgba(255, 159, 64, 0.9)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
         ],
         borderWidth: 0,
       },
@@ -35,9 +35,9 @@ const options = {
     },
     responsive: true,
     plugins: {
-      legend: {
-        position: 'right',
-      },
+      // legend: {
+      //   position: 'right',
+      // },
       title: {
         display: true,
         text: 'Votes per candidates',
@@ -89,7 +89,12 @@ const Result = () => {
             ))}
             </table>
             <div className="result-chart-main-div">
-            {chartfetch ? <Bar data={data} options={options}/> : "Loading.."}
+              <div className="result-chart-main-div-bar">
+              {chartfetch ? <Bar data={data} options={options}/> : "Loading.."}
+              </div>
+              <div className="result-chart-main-div-doughnut">
+              {chartfetch ? <Doughnut data={data}/> : "Loading.."}
+              </div>
             </div>
         </div>
     );

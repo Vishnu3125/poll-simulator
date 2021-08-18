@@ -11,10 +11,12 @@ const Add = () => {
     function addMember() {
         const form = candidateData.current
         const data = {
-            "name" : form['candidateName'].value
+            "name" : form['candidateName'].value,
+            "pin" : form['pin'].value
         }
         axios.post('http://127.0.0.1:5000/add', data)
             .then(response => {
+                console.log(response.data)
                 setdataUpdated(dataUpdated+1)
             });
     }
@@ -33,7 +35,8 @@ const Add = () => {
             <p className="add-main-heading">Add Candidate</p>
             <div>
             <form method="post" ref={candidateData}>
-                <input type="text" name="candidateName" id="candidateName" className="add-form-input-text"/>
+                <input type="text" name="candidateName" id="candidateName" className="add-form-input-text" placeholder="Name of candidate"/>
+                <input type="password" name="pin" id="pin" className="add-form-input-pin"/>
                 <input type="button" onClick={addMember} name= "Submit" value = "Submit" className="add-form-input-button"/>
             </form>
             </div>

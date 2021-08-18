@@ -35,7 +35,21 @@
 }
 
 .result-chart-main-div{
-    margin: 3% auto;
-    height: 500px; 
-    width: 800px 
+    display: inline-flex;
+    margin-top: 3%;
+}
+
+.result-chart-main-div-bar{
+    /* margin: 3% auto; */
+    display: inline-flex;
+    height: 400px; 
+    width: 700px;
+}
+
+.result-chart-main-div-doughnut{
+    /* margin: 3% auto; */
+    display: inline;
+    margin-bottom: auto;
+    height: 150px; 
+    width: 350px;
 }
